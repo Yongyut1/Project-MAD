@@ -1,4 +1,4 @@
-name: account
+name: library_member_card
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -19,7 +19,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.6.0
+  sdk: ">=3.0.0 <4.0.0"
+
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -30,14 +31,26 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  path_provider: ^2.0.11
+  image_picker: ^1.0.4
+  intl: ^0.18.0
+  provider: ^6.0.5  # ใช้ Provider ในการจัดการสถานะธีม
+  flex_color_scheme: ^7.0.4  # ใช้จัดการสี Tailwind-style
+  fl_chart: ^0.70.2  # ใช้สร้างกราฟ
+  excel: ^2.0.26  # ใช้สำหรับสร้างไฟล์ Excel
+  csv: ^5.0.1     # ใช้สำหรับสร้างไฟล์ CSV
+  permission_handler: ^11.4.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  provider: ^6.1.2
   sembast: ^3.8.2
-  path_provider: ^2.1.5
   path: ^1.9.0
+  uuid: ^4.5.1
+  qr_flutter: ^4.1.0
+  shared_preferences: ^2.5.2
+  file_picker: ^9.0.2
+
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +68,14 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: Prompt
+      fonts:
+        - asset: assets/fonts/Prompt-Regular.ttf
+        - asset: assets/fonts/Prompt-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Prompt-Italic.ttf
+          style: italic
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
