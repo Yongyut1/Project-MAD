@@ -6,6 +6,7 @@ import 'provider/themeProvider.dart';
 import 'theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +20,9 @@ void main() async {
 
   final themeProvider = ThemeProvider();
   await themeProvider.loadTheme();
+  await dotenv.load(fileName: "assets/.env");
+  print("🔑 API Key: ${dotenv.env['GEMINI_API_KEY']}");
+
   runApp(MyApp(themeProvider: themeProvider));
 }
 

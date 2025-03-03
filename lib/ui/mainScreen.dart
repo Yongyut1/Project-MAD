@@ -7,6 +7,7 @@ import '../ui/editMemberScreen.dart';
 import '../model/memberItem.dart';
 import '../provider/themeProvider.dart';
 import '../ui/statisticsScreen.dart';
+import '../screens/chatbotScreen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -130,6 +131,26 @@ class _MainScreenState extends State<MainScreen> {
               ),
 
               const SizedBox(width: 10), // ✅ เพิ่มระยะห่างระหว่างตัวกรองกับปุ่มสถิติ
+               // ปุ่ม AI Chatbot
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatbotScreen()),
+                );
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.chat),
+                  SizedBox(width: 8),
+                  Text("AI แนะนำหนังสือ"),
+                ],
+              ),
+            ),
+          ),
 
               IconButton(
                 icon: const Icon(Icons.bar_chart, size: 28), // ✅ ปรับขนาดปุ่ม
