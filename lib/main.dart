@@ -21,8 +21,6 @@ void main() async {
   final themeProvider = ThemeProvider();
   await themeProvider.loadTheme();
   await dotenv.load(fileName: "assets/.env");
-  print("🔑 API Key: ${dotenv.env['GEMINI_API_KEY']}");
-
   runApp(MyApp(themeProvider: themeProvider));
 }
 
